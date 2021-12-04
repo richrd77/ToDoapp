@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>To Do</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="my-container">
+        <header class="header">
+            <div>TODO</div>
+        </header>
+        <main class="main-body">
+            <section class="todo task-cont">
+                <div class="task-header">To Do</div>
+                <div class="task-wrapper">
+                    <a class="task">
+                        <span>My Task</span>
+                        <button>Delete</button>
+                    </a>
+                </div>
+            </section>
+            <section class="inprog task-cont">
+                <div class="task-header">In Progress</div>
+                <div class="task-wrapper"></div>
+            </section>
+            <section class="comp task-cont">
+                <div class="task-header">Completed</div>
+                <div class="task-wrapper"></div>
+            </section>
+            <a class="btn-add" onclick="OpenNew()">&#43</a>
+        </main>
+    </div>
+    <div class="modal fade" id="dg-new-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">New Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="new-frm">
+                        <div class="new-task-cont">
+                            <input class="my-control" type="text" id="txt-new-task-name" placeholder="Task Name">
+                        </div>
+                        <div class="new-task-cont">
+                            <textarea rows="5" class="my-control" id="txt-new-task-desc"
+                                placeholder="Description"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="my-btn hate" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="my-btn fav" value="Save">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="dg-edit-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">Edit Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-frm">
+                        <div class="new-task-cont">
+                            <input class="my-control" type="text" id="txt-edit-task-name" placeholder="Task Name">
+                        </div>
+                        <div class="new-task-cont">
+                            <select id="txt-edit-status" class="my-control">
+                                <option value="todo">To Do</option>
+                                <option value="inprogress">In Progress</option>
+                                <option value="done">Done</option>
+                            </select>
+                        </div>
+                        <div class="new-task-cont">
+                            <textarea rows="5" class="my-control" id="txt-edit-task-desc"
+                                placeholder="Description"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="my-btn hate" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="my-btn fav" value="Save">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    function OpenNew() {
+        $('#dg-new-task').modal('show');
+    }
+</script>
+
+</html>
