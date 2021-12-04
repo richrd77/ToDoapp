@@ -28,8 +28,6 @@ body {
 }
 
 .main-body {
-    /* background-color: red; */
-    /* min-height: calc(100vh - 80px); */
     height: calc(100vh - 80px);
     width: 100vw;
     display: flex;
@@ -38,8 +36,6 @@ body {
 }
 
 .task-cont {
-    /* background-color: black; */
-    /* height: calc(100% - (1em - 2.4px)); */
     width: 350px;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -49,11 +45,68 @@ body {
 .task-header {
     font-size: 2em;
     text-align: center;
+    cursor: default;
+    user-select: none;
 }
 
 .task-wrapper {
-    /* background-color: blue; */
     height: 94%;
+    overflow-y: scroll;
+}
+
+.task {
+    width: 330px;
+    background-color: deeppink;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    border-radius: 2px;
+    margin: 0.5em 0;
+    user-select: none;
+}
+
+.task:hover {
+    color: white;
+}
+
+.task span {
+    flex: 2;
+    max-width: 300px;
+    word-wrap: break-word;
+    cursor: pointer;
+    padding: 0.8em 1em;
+}
+
+.task button {
+    flex: 1;
+    border-color: transparent;
+    background-color: transparent;
+    color: white;
+    cursor: default !important;
+}
+
+.task button i {
+    cursor: pointer;
+}
+
+.task-wrapper::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgb(255, 134, 225);
+	border-radius: 2px;
+	background-color: #F5F5F5;
+}
+
+.task-wrapper::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.task-wrapper::-webkit-scrollbar-thumb
+{
+	border-radius: 2px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: deeppink;
 }
 
 .btn-add {
@@ -121,10 +174,5 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 20, 145, 0.603) !important;
 }
 
-.task {
-    width: 100%;
-    background-color: deeppink;
-    color: white;
-    display: block;
-    
-}
+
+
